@@ -1,0 +1,36 @@
+{
+  "name": "@whatsapp-flow/flow-engine",
+  "version": "0.0.1",
+  "description": "Consumes inbound WhatsApp messages from RabbitMQ and answers them by walking a node-graph conversation flow",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@whatsapp-flow/sdk": "workspace:*",
+    "@whatsapp-flow/shared": "workspace:*",
+    "amqplib": "^0.10.7",
+    "axios": "^1.8.4",
+    "mongoose": "^8.13.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.7",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "_id": "welcome-flow",
+  "author": "admin",
+  "name": "Welcome",
+  "number": "15550001111",
+  "search": [
+    { "type": "default", "value": "" },
+    { "type": "equals", "value": "menu" }
+  ],
+  "content": {
+    "nodes": [
+      {
+        "id": 0,
+        "name": "Greeting",
+        "x": 0,
+        "y": 0,
+        "extra": {
+          "type": "text",
+          "value": {
+            "messages": [{ "type": "text", "value": "Hi! Thanks for getting in touch." }]
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Menu",
+        "x": 240,
+        "y": 0,
+        "extra": {
+          "type": "interaction",
+          "value": {
+            "value": "What do you need?",
+            "footer": { "text": "Pick one of the options" },
+            "action": {
+              "type": "button",
+              "value": [{ "value": "Opening hours" }, { "value": "Talk to us" }]
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Opening hours",
+        "x": 480,
+        "y": -80,
+        "extra": {
+          "type": "text",
+          "value": {
+            "messages": [{ "type": "text", "value": "We are open Monday to Friday, 9am to 6pm." }]
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Ask name",
+        "x": 480,
+        "y": 80,
+        "extra": {
+          "type": "text",
+          "value": {
+            "messages": [{ "type": "question", "value": "Sure. What is your name?" }]
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Pause",
+        "x": 720,
+        "y": 80,
+        "extra": { "type": "delay", "value": { "delay": 2 } }
+      },
+      {
+        "id": 5,
+        "name": "Handoff",
+        "x": 960,
+        "y": 80,
+        "extra": {
+          "type": "text",
+          "value": {
+            "messages": [
+              { "type": "text", "value": "Thanks! Someone from our team will message you shortly." }
+            ]
+          }
+        }
+      }
+    ],
+    "links": [
+      {
+        "nodes": [
+          { "id": 0, "componentIndex": 0 },
+          { "id": 1, "componentIndex": 0 }
+        ]
+      },
+      {
+        "nodes": [
+          { "id": 1, "componentIndex": 0 },
+          { "id": 2, "componentIndex": 0 }
+        ]
+      },
+      {
+        "nodes": [
+          { "id": 1, "componentIndex": 1 },
+          { "id": 3, "componentIndex": 0 }
+        ]
+      },
+      {
+        "nodes": [
+          { "id": 3, "componentIndex": 0 },
+          { "id": 4, "componentIndex": 0 }
+        ]
+      },
+      {
+        "nodes": [
+          { "id": 4, "componentIndex": 0 },
+          { "id": 5, "componentIndex": 0 }
+        ]
+      }
+    ]
+  }
+}
