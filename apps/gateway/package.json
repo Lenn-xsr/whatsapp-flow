@@ -1,0 +1,37 @@
+{
+  "name": "@whatsapp-flow/gateway",
+  "version": "0.0.1",
+  "description": "Receives WhatsApp Cloud API webhooks, stores and publishes inbound messages, and sends outbound messages to the Graph API",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@whatsapp-flow/shared": "workspace:*",
+    "amqplib": "^0.10.7",
+    "axios": "^1.8.4",
+    "fastify": "^5.2.2",
+    "fastify-raw-body": "^5.0.0",
+    "mongoose": "^8.13.2"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.7",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
