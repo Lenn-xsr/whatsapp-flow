@@ -1,0 +1,31 @@
+{
+  "name": "whatsapp-flow",
+  "version": "0.0.1",
+  "description": "WhatsApp Cloud API gateway, node-graph conversation flow engine and client SDK",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev --filter=@whatsapp-flow/gateway --filter=@whatsapp-flow/flow-engine",
+    "dev:gateway": "turbo run dev --filter=@whatsapp-flow/gateway",
+    "dev:flow-engine": "turbo run dev --filter=@whatsapp-flow/flow-engine",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,mjs,cjs,json,yml}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
+    "prettier": "^3.8.1",
+    "turbo": "^2.8.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.46.0"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22"
+  }
+}
